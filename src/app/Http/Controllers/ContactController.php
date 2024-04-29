@@ -19,6 +19,7 @@ class ContactController extends Controller
         return view('confirm', ['contact' => $contact]);
     }
 
+    // thanksページでリダイレクトすると同じ内容のデータが追加される不具合がある。
     public function store(ContactRequest $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
